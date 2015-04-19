@@ -90,6 +90,7 @@ suites:
   - recipe[docker_test::default]
   - recipe[docker_test::image_lwrp]
   - recipe[docker_test::container_lwrp]
+  - recipe[docker_test::compose]
   attributes:
     docker:
       install_type: package
@@ -99,6 +100,7 @@ suites:
   - recipe[docker_test::default]
   - recipe[docker_test::image_lwrp]
   - recipe[docker_test::container_lwrp]
+  - recipe[docker_test::compose]
   excludes:
     - fedora-19 # There is some bug with removing containers. We will address
     - fedora-20 # this bug in a future release.
@@ -118,6 +120,7 @@ suites:
   - recipe[docker_test::default]
   - recipe[docker_test::image_lwrp]
   - recipe[docker_test::container_lwrp]
+  - recipe[docker_test::compose]
   attributes:
     docker:
       install_type: binary
@@ -132,6 +135,7 @@ suites:
   - recipe[docker_test::default]
   - recipe[docker_test::image_lwrp]
   - recipe[docker_test::container_lwrp]
+  - recipe[docker_test::compose]
   attributes:
     docker:
       install_type: binary
@@ -171,7 +175,7 @@ suites:
 #  - recipe[minitest-handler]
 #  - recipe[docker_test::default]
 #  - recipe[docker_test::image_lwrp]
-#  - recipe[docker_test::container_lwrp]
+#  - recipe[docker_test::container_lwrp
 #- name: docker-lwrp-lxc
 #  run_list:
 #  - recipe[minitest-handler]

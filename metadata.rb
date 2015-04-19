@@ -4,7 +4,7 @@ maintainer_email 'bflad417@gmail.com'
 license 'Apache 2.0'
 description 'Installs/Configures Docker'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.37.0'
+version '0.37.1'
 
 recipe 'docker', 'Installs/Configures Docker'
 recipe 'docker::aufs', 'Installs/Loads AUFS Linux module'
@@ -20,6 +20,8 @@ recipe 'docker::source', 'Installs Docker via source'
 recipe 'docker::systemd', 'Installs/Starts Docker via systemd'
 recipe 'docker::sysv', 'Installs/Starts Docker via SysV'
 recipe 'docker::upstart', 'Installs/Starts Docker via Upstart'
+
+recipe 'docker::compose', 'Install docker-compose utilities.'
 
 supports 'amazon'
 supports 'centos', '>= 6.0'
@@ -43,3 +45,5 @@ depends 'modules'
 depends 'runit'
 depends 'sysctl'
 depends 'yum-epel'
+
+depends 'python', '~> 1.4.6'

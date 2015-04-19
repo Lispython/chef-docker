@@ -200,3 +200,9 @@ default['docker']['registry_cmd_timeout'] = 60
 
 # DEPRECATED: will be removed in chef-docker 1.0
 default['docker']['restart'] = nil
+
+default["docker"]["compose"]["pip_packages"] = {
+  "requests" => "2.5.3",
+  "docker-py" => "1.1.0",
+  "docker-compose" => "1.2.0"
+}
