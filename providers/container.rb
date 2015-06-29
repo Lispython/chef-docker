@@ -230,7 +230,7 @@ def get_ranges(header)
 end
 
 #
-# Get a list of all docker containers by parsing the output of `docker ps -a -notrunc`.
+# Get a list of all docker containers by parsing the output of `docker ps -a --no-trunc`.
 #
 # Uses `get_ranges` to determine where column data is within each row. Then, for each line after
 # the header, a hash is build up with the values for each of the columns. A special 'line' entry
@@ -389,6 +389,7 @@ def run_cli_args
     'rm' => new_resource.remove_automatically,
     'restart' => new_resource.restart,
     'tty' => new_resource.tty,
+    'ulimit' => Array(new_resource.ulimit),
     'user' => new_resource.user,
     'volume' => Array(new_resource.volume),
     'volumes-from' => new_resource.volumes_from,
